@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Hangman from "./components/Hangman";
-import Welcome from "./components/Welcome";
+import Hangman from "../src/components/Hangman";
+import Welcome from "../src/components/Welcome";
+import './css/main.css';
 
 const categories = {
   frutas: ['manzana', 'sandia', 'fresas', 'naranjas', 'mandarinas', 'durazno', 'pera'],
@@ -20,10 +21,11 @@ const App: React.FC = () => {
       {!selectedCategory ? (
         <Welcome startGame={startGame} categories={Object.keys(categories)} />
       ) : (
-        <Hangman words={categories[selectedCategory]} />
+        <Hangman words={categories[selectedCategory as keyof typeof categories]} />
       )}
     </div>
   );
 }
 
 export default App;
+
