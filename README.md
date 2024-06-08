@@ -39,7 +39,7 @@ index.tsx: Archivo de entrada de React.
 
 
 # Cómo Ejecutar
-Clona este repositorio: git clone https://github.com/tu-usuario/juego-del-ahorcado.git
+Clona este repositorio: git clone https://github.com/BethelSalazar/hangman_game.git
 Instala las dependencias: npm install
 Inicia la aplicación: npm start
 Abre tu navegador y visita http://localhost:5173 para jugar.
