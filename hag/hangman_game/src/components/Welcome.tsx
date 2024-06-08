@@ -3,11 +3,10 @@ import '../css/main.css';
 
 interface WelcomeProps {
   startGame: (category: string) => void;
-  selectNewWord: () => void;
   categories: string[];
 }
 
-const Welcome: React.FC<WelcomeProps> = ({ startGame, selectNewWord, categories }) => {
+const Welcome: React.FC<WelcomeProps> = ({ startGame, categories }) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showCategories, setShowCategories] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
@@ -22,24 +21,11 @@ const Welcome: React.FC<WelcomeProps> = ({ startGame, selectNewWord, categories 
     }
   };
 
-  const handleExit = () => {
-    setSelectedCategory(null);
-    setGameStarted(false);
-    setGameOver(false);
-    setGameWon(false);
-  };
-
   return (
     <div className="welcome-container">
       <div className="wrapper">
         <h1>Bienvenido al juego del ahorcado!!</h1>
         <h2>Juego Clásico</h2>
-        <div className="game-buttons">
-          <button className="back-button" onClick={handleExit}>Volver</button>
-          {gameStarted && (
-            <button className="new-word-button" onClick={selectNewWord}>Nueva Palabra</button>
-          )}
-        </div>
         {!selectedCategory && (
           <div className="category-dropdown">
             <button className="category-button" onClick={() => setShowCategories(!showCategories)}>
@@ -75,6 +61,7 @@ const Welcome: React.FC<WelcomeProps> = ({ startGame, selectNewWord, categories 
 }
 
 export default Welcome;
+
 
 
 
