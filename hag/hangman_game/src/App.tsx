@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Hangman from "../src/components/Hangman";
+import React, { useState } from 'react';
+import Hangman from "../src/components/Hangman";
 import Welcome from "../src/components/Welcome";
 import './css/main.css';
 
