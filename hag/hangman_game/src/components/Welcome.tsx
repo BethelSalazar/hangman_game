@@ -21,11 +21,21 @@ const Welcome: React.FC<WelcomeProps> = ({ startGame, categories }) => {
     }
   };
 
+  const handleExit = () => {
+    setSelectedCategory(null);
+    setGameStarted(false);
+    setGameOver(false);
+    setGameWon(false);
+  };
+
   return (
     <div className="welcome-container">
       <div className="wrapper">
         <h1>Bienvenido al juego del ahorcado!!</h1>
         <h2>Juego Clásico</h2>
+        <div className="game-buttons">
+          <button className="back-button" onClick={handleExit}>Volver</button>
+        </div>
         {!selectedCategory && (
           <div className="category-dropdown">
             <button className="category-button" onClick={() => setShowCategories(!showCategories)}>
@@ -61,7 +71,6 @@ const Welcome: React.FC<WelcomeProps> = ({ startGame, categories }) => {
 }
 
 export default Welcome;
-
 
 
 
